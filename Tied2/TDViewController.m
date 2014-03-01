@@ -8,7 +8,12 @@
 
 #import "TDViewController.h"
 
+#import "TDSessionManager.h"
+
 @interface TDViewController ()
+{
+    TDSessionManager *manager;
+}
 
 @end
 
@@ -18,6 +23,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    manager = [[TDSessionManager alloc] init];
 }
 
 - (void)didReceiveMemoryWarning

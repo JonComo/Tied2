@@ -21,6 +21,7 @@
 		8681CCA718C1BE5B0060E0D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CC8918C1BE5B0060E0D5 /* UIKit.framework */; };
 		8681CCAF18C1BE5B0060E0D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8681CCAD18C1BE5B0060E0D5 /* InfoPlist.strings */; };
 		8681CCB118C1BE5B0060E0D5 /* Tied2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */; };
+		8681CCBC18C1BE720060E0D5 /* TDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		8681CCAC18C1BE5B0060E0D5 /* Tied2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tied2Tests-Info.plist"; sourceTree = "<group>"; };
 		8681CCAE18C1BE5B0060E0D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tied2Tests.m; sourceTree = "<group>"; };
+		8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSessionManager.h; sourceTree = "<group>"; };
+		8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				8681CC9718C1BE5B0060E0D5 /* Main.storyboard */,
 				8681CC9A18C1BE5B0060E0D5 /* TDViewController.h */,
 				8681CC9B18C1BE5B0060E0D5 /* TDViewController.m */,
+				8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */,
+				8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */,
 				8681CC9D18C1BE5B0060E0D5 /* Images.xcassets */,
 				8681CC8C18C1BE5B0060E0D5 /* Supporting Files */,
 			);
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8681CCBC18C1BE720060E0D5 /* TDSessionManager.m in Sources */,
 				8681CC9C18C1BE5B0060E0D5 /* TDViewController.m in Sources */,
 				8681CC9618C1BE5B0060E0D5 /* TDAppDelegate.m in Sources */,
 				8681CC9218C1BE5B0060E0D5 /* main.m in Sources */,
