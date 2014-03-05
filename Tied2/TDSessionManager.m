@@ -24,24 +24,33 @@
     MCNearbyServiceBrowser *_browser;
 }
 
--(id)init
+-(id)initWithDelegate:(id<TDSessionManagerDelegate>)delegate
 {
     if (self = [super init]) {
         //init
+        _delegate = delegate;
+        
         _peerId = [[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name];
         session = [[MCSession alloc] initWithPeer:_peerId];
         session.delegate = self;
         
         advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerId discoveryInfo:nil serviceType:TDServiceType];
         advertiser.delegate = self;
-        [advertiser startAdvertisingPeer];
         
         _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:_peerId serviceType:TDServiceType];
         _browser.delegate = self;
-        [_browser startBrowsingForPeers];
+        
+        _allPeers = [NSMutableArray array];
+        _connectedPeers = [NSMutableArray array];
     }
     
     return self;
+}
+
+-(void)start
+{
+    [advertiser startAdvertisingPeer];
+    [_browser startBrowsingForPeers];
 }
 
 #pragma MCNearbyServiceAdvertiserDelegate
@@ -68,11 +77,23 @@
 {
     NSLog(@"Found peer: %@", peerID);
     
+    if (![self.allPeers containsObject:peerID])
+        [self.allPeers addObject:peerID];
+    
+    if ([self.delegate respondsToSelector:@selector(sessionManager:foundPeer:)])
+        [self.delegate sessionManager:self foundPeer:peerID];
+    
     [browser invitePeer:peerID toSession:session withContext:NULL timeout:30];
 }
 
 -(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
 {
+    if ([self.allPeers containsObject:peerID])
+        [self.allPeers removeObject:peerID];
+    
+    if ([self.delegate respondsToSelector:@selector(sessionManager:lostPeer:)])
+        [self.delegate sessionManager:self lostPeer:peerID];
+    
     NSLog(@"Lost peer: %@", peerID);
 }
 

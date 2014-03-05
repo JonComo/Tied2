@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86302A6818C7072700C9F0B1 /* TDPeerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86302A6718C7072700C9F0B1 /* TDPeerView.m */; };
+		86302A6B18C709F700C9F0B1 /* TDGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 86302A6A18C709F700C9F0B1 /* TDGraphics.m */; };
+		86302A6E18C70BF100C9F0B1 /* TDMeshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86302A6D18C70BF100C9F0B1 /* TDMeshView.m */; };
+		86302A7118C7122F00C9F0B1 /* JCMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 86302A7018C7122F00C9F0B1 /* JCMath.m */; };
+		86302A7418C71ECE00C9F0B1 /* TDLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86302A7318C71ECE00C9F0B1 /* TDLineView.m */; };
 		8681CC8618C1BE5B0060E0D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CC8518C1BE5B0060E0D5 /* Foundation.framework */; };
 		8681CC8818C1BE5B0060E0D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CC8718C1BE5B0060E0D5 /* CoreGraphics.framework */; };
 		8681CC8A18C1BE5B0060E0D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CC8918C1BE5B0060E0D5 /* UIKit.framework */; };
@@ -14,7 +19,6 @@
 		8681CC9218C1BE5B0060E0D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CC9118C1BE5B0060E0D5 /* main.m */; };
 		8681CC9618C1BE5B0060E0D5 /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CC9518C1BE5B0060E0D5 /* TDAppDelegate.m */; };
 		8681CC9918C1BE5B0060E0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8681CC9718C1BE5B0060E0D5 /* Main.storyboard */; };
-		8681CC9C18C1BE5B0060E0D5 /* TDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CC9B18C1BE5B0060E0D5 /* TDViewController.m */; };
 		8681CC9E18C1BE5B0060E0D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8681CC9D18C1BE5B0060E0D5 /* Images.xcassets */; };
 		8681CCA518C1BE5B0060E0D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CCA418C1BE5B0060E0D5 /* XCTest.framework */; };
 		8681CCA618C1BE5B0060E0D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8681CC8518C1BE5B0060E0D5 /* Foundation.framework */; };
@@ -22,6 +26,7 @@
 		8681CCAF18C1BE5B0060E0D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8681CCAD18C1BE5B0060E0D5 /* InfoPlist.strings */; };
 		8681CCB118C1BE5B0060E0D5 /* Tied2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */; };
 		8681CCBC18C1BE720060E0D5 /* TDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */; };
+		86EFB4AB18C6EBE7005406BD /* TDConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFB4AA18C6EBE7005406BD /* TDConnectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86302A6618C7072700C9F0B1 /* TDPeerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPeerView.h; sourceTree = "<group>"; };
+		86302A6718C7072700C9F0B1 /* TDPeerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPeerView.m; sourceTree = "<group>"; };
+		86302A6918C709F700C9F0B1 /* TDGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGraphics.h; sourceTree = "<group>"; };
+		86302A6A18C709F700C9F0B1 /* TDGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGraphics.m; sourceTree = "<group>"; };
+		86302A6C18C70BF100C9F0B1 /* TDMeshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMeshView.h; sourceTree = "<group>"; };
+		86302A6D18C70BF100C9F0B1 /* TDMeshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMeshView.m; sourceTree = "<group>"; };
+		86302A6F18C7122F00C9F0B1 /* JCMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCMath.h; sourceTree = "<group>"; };
+		86302A7018C7122F00C9F0B1 /* JCMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMath.m; sourceTree = "<group>"; };
+		86302A7218C71ECE00C9F0B1 /* TDLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLineView.h; sourceTree = "<group>"; };
+		86302A7318C71ECE00C9F0B1 /* TDLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLineView.m; sourceTree = "<group>"; };
 		8681CC8218C1BE5B0060E0D5 /* Tied2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tied2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8681CC8518C1BE5B0060E0D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8681CC8718C1BE5B0060E0D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +61,6 @@
 		8681CC9418C1BE5B0060E0D5 /* TDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAppDelegate.h; sourceTree = "<group>"; };
 		8681CC9518C1BE5B0060E0D5 /* TDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAppDelegate.m; sourceTree = "<group>"; };
 		8681CC9818C1BE5B0060E0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8681CC9A18C1BE5B0060E0D5 /* TDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDViewController.h; sourceTree = "<group>"; };
-		8681CC9B18C1BE5B0060E0D5 /* TDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDViewController.m; sourceTree = "<group>"; };
 		8681CC9D18C1BE5B0060E0D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8681CCA318C1BE5B0060E0D5 /* Tied2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tied2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8681CCA418C1BE5B0060E0D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -56,6 +69,8 @@
 		8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tied2Tests.m; sourceTree = "<group>"; };
 		8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSessionManager.h; sourceTree = "<group>"; };
 		8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSessionManager.m; sourceTree = "<group>"; };
+		86EFB4A918C6EBE7005406BD /* TDConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectViewController.h; sourceTree = "<group>"; };
+		86EFB4AA18C6EBE7005406BD /* TDConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,8 @@
 		8681CC8418C1BE5B0060E0D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86302A6F18C7122F00C9F0B1 /* JCMath.h */,
+				86302A7018C7122F00C9F0B1 /* JCMath.m */,
 				8681CC8518C1BE5B0060E0D5 /* Foundation.framework */,
 				8681CC8718C1BE5B0060E0D5 /* CoreGraphics.framework */,
 				8681CC8918C1BE5B0060E0D5 /* UIKit.framework */,
@@ -118,10 +135,8 @@
 				8681CC9418C1BE5B0060E0D5 /* TDAppDelegate.h */,
 				8681CC9518C1BE5B0060E0D5 /* TDAppDelegate.m */,
 				8681CC9718C1BE5B0060E0D5 /* Main.storyboard */,
-				8681CC9A18C1BE5B0060E0D5 /* TDViewController.h */,
-				8681CC9B18C1BE5B0060E0D5 /* TDViewController.m */,
-				8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */,
-				8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */,
+				86EFB4A818C6EBB0005406BD /* Model */,
+				86EFB4AC18C6EBE9005406BD /* View */,
 				8681CC9D18C1BE5B0060E0D5 /* Images.xcassets */,
 				8681CC8C18C1BE5B0060E0D5 /* Supporting Files */,
 			);
@@ -155,6 +170,32 @@
 				8681CCAD18C1BE5B0060E0D5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86EFB4A818C6EBB0005406BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86302A6918C709F700C9F0B1 /* TDGraphics.h */,
+				86302A6A18C709F700C9F0B1 /* TDGraphics.m */,
+				8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */,
+				8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		86EFB4AC18C6EBE9005406BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86EFB4A918C6EBE7005406BD /* TDConnectViewController.h */,
+				86EFB4AA18C6EBE7005406BD /* TDConnectViewController.m */,
+				86302A6C18C70BF100C9F0B1 /* TDMeshView.h */,
+				86302A6D18C70BF100C9F0B1 /* TDMeshView.m */,
+				86302A7218C71ECE00C9F0B1 /* TDLineView.h */,
+				86302A7318C71ECE00C9F0B1 /* TDLineView.m */,
+				86302A6618C7072700C9F0B1 /* TDPeerView.h */,
+				86302A6718C7072700C9F0B1 /* TDPeerView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +296,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86302A7418C71ECE00C9F0B1 /* TDLineView.m in Sources */,
+				86302A6818C7072700C9F0B1 /* TDPeerView.m in Sources */,
 				8681CCBC18C1BE720060E0D5 /* TDSessionManager.m in Sources */,
-				8681CC9C18C1BE5B0060E0D5 /* TDViewController.m in Sources */,
+				86302A7118C7122F00C9F0B1 /* JCMath.m in Sources */,
+				86302A6E18C70BF100C9F0B1 /* TDMeshView.m in Sources */,
+				86EFB4AB18C6EBE7005406BD /* TDConnectViewController.m in Sources */,
 				8681CC9618C1BE5B0060E0D5 /* TDAppDelegate.m in Sources */,
+				86302A6B18C709F700C9F0B1 /* TDGraphics.m in Sources */,
 				8681CC9218C1BE5B0060E0D5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +513,7 @@
 				8681CCB618C1BE5B0060E0D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8681CCB718C1BE5B0060E0D5 /* Build configuration list for PBXNativeTarget "Tied2Tests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +522,7 @@
 				8681CCB918C1BE5B0060E0D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
