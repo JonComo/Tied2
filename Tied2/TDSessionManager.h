@@ -11,6 +11,7 @@
 @class MCBrowserViewController;
 @class TDSessionManager;
 @class MCPeerID;
+@class TDAudioClip;
 
 @protocol TDSessionManagerDelegate <NSObject>
 
@@ -24,10 +25,9 @@
 
 @property (nonatomic, weak) id <TDSessionManagerDelegate> delegate;
 
-@property (nonatomic, strong) NSMutableArray *allPeers;
-@property (nonatomic, strong) NSMutableArray *connectedPeers;
-
 -(id)initWithDelegate:(id<TDSessionManagerDelegate>)delegate;
 -(void)start;
+
+-(void)sendClip:(TDAudioClip *)clip;
 
 @end

@@ -8,6 +8,9 @@
 
 #import "TDSessionManager.h"
 
+#import "TDAudioClip.h"
+#import "TDAudioManager.h"
+
 #define TDServiceType @"joncomo-tied"
 
 @import MultipeerConnectivity;
@@ -39,9 +42,6 @@
         
         _browser = [[MCNearbyServiceBrowser alloc] initWithPeer:_peerId serviceType:TDServiceType];
         _browser.delegate = self;
-        
-        _allPeers = [NSMutableArray array];
-        _connectedPeers = [NSMutableArray array];
     }
     
     return self;
@@ -77,9 +77,6 @@
 {
     NSLog(@"Found peer: %@", peerID);
     
-    if (![self.allPeers containsObject:peerID])
-        [self.allPeers addObject:peerID];
-    
     if ([self.delegate respondsToSelector:@selector(sessionManager:foundPeer:)])
         [self.delegate sessionManager:self foundPeer:peerID];
     
@@ -88,13 +85,22 @@
 
 -(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
 {
-    if ([self.allPeers containsObject:peerID])
-        [self.allPeers removeObject:peerID];
-    
     if ([self.delegate respondsToSelector:@selector(sessionManager:lostPeer:)])
         [self.delegate sessionManager:self lostPeer:peerID];
     
     NSLog(@"Lost peer: %@", peerID);
+}
+
+#pragma SendingData
+
+-(void)sendClip:(TDAudioClip *)clip
+{
+    NSData *data = [NSData dataWithContentsOfURL:clip.URL];
+    
+    NSError *error;
+    [session sendData:data toPeers:session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
+    
+    if (error) NSLog(@"Error sending data: %@", error);
 }
 
 #pragma MCSessionDelegate
@@ -102,11 +108,28 @@
 -(void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
 {
     NSLog(@"Session state changed! %i", state);
+    
+    switch (state) {
+        case MCSessionStateConnected:
+            //Connected to a peer
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    NSLog(@"Got data");
+    NSLog(@"Got data, play it somehow!");
+    
+    TDAudioClip *clip = [[TDAudioClip alloc] init];
+    
+    NSURL *fileURL = [TDAudioManager uniqueWithName:@"input.mp4"];
+    [data writeToURL:fileURL atomically:YES];
+    
+    clip.URL = fileURL;
+    [[TDAudioManager sharedManager] playClip:clip];
 }
 
 -(void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error
