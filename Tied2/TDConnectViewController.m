@@ -73,17 +73,18 @@
 
 -(void)sessionManagerStateChanged:(TDSessionManager *)manager
 {
-    
+    //Changed connected peers
+    [meshView updateWithPeers:manager.session.connectedPeers];
 }
 
 -(void)sessionManager:(TDSessionManager *)manager foundPeer:(MCPeerID *)peerId
 {
-    [meshView addPeerId:peerId];
+    //[meshView addPeerId:peerId];
 }
 
 -(void)sessionManager:(TDSessionManager *)manager lostPeer:(MCPeerID *)peerId
 {
-    [meshView removePeerId:peerId];
+    //[meshView removePeerId:peerId];
 }
 
 @end

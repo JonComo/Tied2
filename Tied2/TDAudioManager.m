@@ -105,6 +105,7 @@
     }
     
     NSURL *outputURL = [TDAudioManager uniqueWithName:@"audio"];
+    [outputURL URLByAppendingPathExtension:@"mp4"];
     
     clipRecording = [TDAudioClip new];
     clipRecording.URL = outputURL;

@@ -49,7 +49,6 @@
         
         _nodeSize = CGSizeMake(90, 90);
         
-        
         lineView = [[TDLineView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:lineView];
         lineView.peerViews = peerViews;
@@ -66,6 +65,18 @@
     
     centerPeer.name = name;
     lineView.centerPeer = centerPeer;
+}
+
+-(void)updateWithPeers:(NSArray *)peers
+{
+    NSMutableArray *peersToRemove = [NSMutableArray array];
+    
+    
+    //Add new ones for the connected
+    
+    for (MCPeerID *peerId in peers){
+        [self addPeerId:peerId];
+    }
 }
 
 -(void)addPeerId:(MCPeerID *)peerId
@@ -147,7 +158,7 @@
     TDPeerView *touchedPeer;
     
     float dist = FLT_MAX;
-    for (TDPeerView *peerView in peerViews){
+    for (TDPeerView *peerView in self.subviews){
         float testDist = [JCMath distanceBetweenPoint:location andPoint:CGPointMake(peerView.frame.origin.x + peerView.frame.size.width/2, peerView.frame.origin.y + peerView.frame.size.height/2) sorting:NO];
         if (testDist > 100) continue;
         if (testDist < dist){

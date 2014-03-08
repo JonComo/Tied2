@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class MCBrowserViewController;
+@import MultipeerConnectivity;
+
 @class TDSessionManager;
-@class MCPeerID;
 @class TDAudioClip;
 
 @protocol TDSessionManagerDelegate <NSObject>
@@ -24,6 +24,8 @@
 @interface TDSessionManager : NSObject
 
 @property (nonatomic, weak) id <TDSessionManagerDelegate> delegate;
+
+@property (nonatomic, strong) MCSession *session;
 
 -(id)initWithDelegate:(id<TDSessionManagerDelegate>)delegate;
 -(void)start;

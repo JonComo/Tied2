@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *name;
 @property CGSize nodeSize;
 
+-(void)updateWithPeers:(NSArray *)peers;
+
 -(void)addPeerId:(MCPeerID *)peerId;
 -(void)removePeerId:(MCPeerID *)peerId;
 

@@ -28,6 +28,7 @@
 		8681CCAF18C1BE5B0060E0D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8681CCAD18C1BE5B0060E0D5 /* InfoPlist.strings */; };
 		8681CCB118C1BE5B0060E0D5 /* Tied2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */; };
 		8681CCBC18C1BE720060E0D5 /* TDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */; };
+		86D9F09E18C947A400FE0B3D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D9F09D18C947A400FE0B3D /* Main_iPad.storyboard */; };
 		86EFB4AB18C6EBE7005406BD /* TDConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFB4AA18C6EBE7005406BD /* TDConnectViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		8681CCB018C1BE5B0060E0D5 /* Tied2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tied2Tests.m; sourceTree = "<group>"; };
 		8681CCBA18C1BE720060E0D5 /* TDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSessionManager.h; sourceTree = "<group>"; };
 		8681CCBB18C1BE720060E0D5 /* TDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSessionManager.m; sourceTree = "<group>"; };
+		86D9F09D18C947A400FE0B3D /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		86EFB4A918C6EBE7005406BD /* TDConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDConnectViewController.h; sourceTree = "<group>"; };
 		86EFB4AA18C6EBE7005406BD /* TDConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				8681CC9418C1BE5B0060E0D5 /* TDAppDelegate.h */,
 				8681CC9518C1BE5B0060E0D5 /* TDAppDelegate.m */,
 				8681CC9718C1BE5B0060E0D5 /* Main.storyboard */,
+				86D9F09D18C947A400FE0B3D /* Main_iPad.storyboard */,
 				86EFB4A818C6EBB0005406BD /* Model */,
 				86EFB4AC18C6EBE9005406BD /* View */,
 				8681CC9D18C1BE5B0060E0D5 /* Images.xcassets */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8681CC9E18C1BE5B0060E0D5 /* Images.xcassets in Resources */,
+				86D9F09E18C947A400FE0B3D /* Main_iPad.storyboard in Resources */,
 				8681CC9018C1BE5B0060E0D5 /* InfoPlist.strings in Resources */,
 				8681CC9918C1BE5B0060E0D5 /* Main.storyboard in Resources */,
 			);
@@ -447,6 +451,7 @@
 				GCC_PREFIX_HEADER = "Tied2/Tied2-Prefix.pch";
 				INFOPLIST_FILE = "Tied2/Tied2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -460,6 +465,7 @@
 				GCC_PREFIX_HEADER = "Tied2/Tied2-Prefix.pch";
 				INFOPLIST_FILE = "Tied2/Tied2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

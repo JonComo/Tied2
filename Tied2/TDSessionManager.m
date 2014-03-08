@@ -22,7 +22,6 @@
 @implementation TDSessionManager
 {
     MCPeerID *_peerId;
-    MCSession *session;
     MCNearbyServiceAdvertiser *advertiser;
     MCNearbyServiceBrowser *_browser;
 }
@@ -34,8 +33,8 @@
         _delegate = delegate;
         
         _peerId = [[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name];
-        session = [[MCSession alloc] initWithPeer:_peerId];
-        session.delegate = self;
+        _session = [[MCSession alloc] initWithPeer:_peerId];
+        _session.delegate = self;
         
         advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_peerId discoveryInfo:nil serviceType:TDServiceType];
         advertiser.delegate = self;
@@ -58,7 +57,7 @@
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
 {
     NSLog(@"Should auto connect");
-    invitationHandler(YES, session);
+    invitationHandler(YES, self.session);
 }
 
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
@@ -80,7 +79,7 @@
     if ([self.delegate respondsToSelector:@selector(sessionManager:foundPeer:)])
         [self.delegate sessionManager:self foundPeer:peerID];
     
-    [browser invitePeer:peerID toSession:session withContext:NULL timeout:30];
+    [browser invitePeer:peerID toSession:self.session withContext:NULL timeout:30];
 }
 
 -(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
@@ -98,7 +97,7 @@
     NSData *data = [NSData dataWithContentsOfURL:clip.URL];
     
     NSError *error;
-    [session sendData:data toPeers:session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
+    [self.session sendData:data toPeers:self.session.connectedPeers withMode:MCSessionSendDataReliable error:&error];
     
     if (error) NSLog(@"Error sending data: %@", error);
 }
@@ -109,14 +108,8 @@
 {
     NSLog(@"Session state changed! %i", state);
     
-    switch (state) {
-        case MCSessionStateConnected:
-            //Connected to a peer
-            break;
-            
-        default:
-            break;
-    }
+    if ([self.delegate respondsToSelector:@selector(sessionManagerStateChanged:)])
+        [self.delegate sessionManagerStateChanged:self];
 }
 
 -(void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
@@ -125,7 +118,8 @@
     
     TDAudioClip *clip = [[TDAudioClip alloc] init];
     
-    NSURL *fileURL = [TDAudioManager uniqueWithName:@"input.mp4"];
+    NSURL *fileURL = [TDAudioManager uniqueWithName:@"input"];
+    [fileURL URLByAppendingPathExtension:@"mp4"];
     [data writeToURL:fileURL atomically:YES];
     
     clip.URL = fileURL;
